@@ -5,6 +5,7 @@ import GoogleProvider from "next-auth/providers/google"
 import User from "@models/user";
 import { connectToDB } from "@/utils/database";
 
+
 const handler=NextAuth({
     providers:[
         GoogleProvider({
@@ -23,7 +24,7 @@ const handler=NextAuth({
                 const checkEmail=await User.find({email:user.email})
                 
                 if (checkEmail.length==0){
-                    await User.insertMany({name:user.name,email:user.email})
+                    await User.insertMany({name:user.name,email:user.email,rank:"Admin"})
                 }
                 return true
                 

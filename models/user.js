@@ -8,6 +8,10 @@ const UserSchema=new Schema({
     email:{
         type:String,
         required:true
+    }, 
+    rank:{
+        type: String,
+        required: true
     }
 })
 
