@@ -1,6 +1,8 @@
 import React from 'react';
-const dropdowns = document.querySelectorAll('.dropdown');
-dropdowns.forEach(dropdown) => {
+import { useEffect } from "react";
+useEffect(()->{
+    const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach((dropdown) => {
     
     const select = dropdown.querySelector('.select');
     const caret = dropdown.querySelector('.caret');
@@ -23,7 +25,9 @@ dropdowns.forEach(dropdown) => {
         option.classList.add('active');
     });
     
-}
+})
+}, [] )
+
 const homePage = () => {
     return (
         <div>
